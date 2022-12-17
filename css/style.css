@@ -1,8 +1,10 @@
-.trendingGif, .searchedGif, .translatedGif {
+.trendingGif, .searchedGif{
     display: flex;
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
     background: white;
     border: 1px solid black;
     background-position: left;
 }
+
+
