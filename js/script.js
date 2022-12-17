@@ -16,13 +16,10 @@ $(document).ready(function() {
         (data) => {
         // alert("I am working!");
         //console.log(data) //to look at the array
-        
-        //get a random index to get a random gif
-        let i = Math.floor(Math.random()*51);
-        console.log(i);
+        let i = Math.floor(Math.random()*51); //get a random index to get a random gif
+        //console.log(i);
         let gif = data.data[i].images.downsized_medium.url;
-         
-          // console.log(gif); //to look at the links
+        // console.log(gif); //to look at the links
         getTrendingGif(gif);
         
       }),
@@ -41,7 +38,6 @@ $(document).ready(function() {
       
       //search gif
       $("#search").on("click", function(evt){
-
         evt.preventDefault(); // prevents a page refresh on a 'click' event 
         var userInput = $input.val();
         // console.log($input.val());
@@ -50,16 +46,14 @@ $(document).ready(function() {
         url: `https://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc`,
       }).then(
         (data) => {
-
-        console.log(data); //to look at the array
-        let i = Math.floor(Math.random()*51);
+        // alert("I am working!");
+        //console.log(data); //to look at the array
+        let i = Math.floor(Math.random()*51); //get a random index to get a random gif
         //console.log(i);
-          // alert("I am working!");
         let gif = data.data[i].images.downsized_medium.url;
-            // console.log(gif); //to look at the links
-            getSearchedGif(gif);
-      
-       $("form").trigger("reset") //clear input after button was clicked  
+        // console.log(gif); //to look at the links
+        getSearchedGif(gif);
+        $("form").trigger("reset") //clear input after button was clicked  
         
         },
         
