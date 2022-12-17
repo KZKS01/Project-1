@@ -21,5 +21,6 @@ Having so many gifs all in one page can be overwhelming, so we are getting one g
 Click [here](https://kzks01.github.io/Project-1/) to see the deployed app.
 
 ## Future Enhancements: 
-* turning the pic into a next button
 * Drag and drop
+* copy the url
+* share to social media
