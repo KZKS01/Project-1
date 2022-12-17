@@ -53,8 +53,6 @@ $(document).ready(function() {
         let gif = data.data[i].images.downsized_medium.url;
         // console.log(gif); //to look at the links
         getSearchedGif(gif);
-        $("form").trigger("reset") //clear input after button was clicked  
-        
         },
         
         (error) => {
