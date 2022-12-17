@@ -11,14 +11,14 @@ $(document).ready(function() {
         
 
     $.ajax({
-        url: `https://api.giphy.com/v1/gifs/trending?&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc&limit=5`,
+        url: `https://api.giphy.com/v1/gifs/trending?&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc`,
       }).then(
         (data) => {
         // alert("I am working!");
         //console.log(data) //to look at the array
         
         //get a random index to get a random gif
-        let i = Math.floor(Math.random()*5);
+        let i = Math.floor(Math.random()*51);
         console.log(i);
         let gif = data.data[i].images.downsized_medium.url;
          
@@ -47,17 +47,18 @@ $(document).ready(function() {
         // console.log($input.val());
 
       $.ajax({
-        url: `https://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc&limit=5`,
+        url: `https://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc`,
       }).then(
         (data) => {
 
         console.log(data); //to look at the array
-        for(let i = 0; i < data.data.length; i++) {
+        let i = Math.floor(Math.random()*51);
+        //console.log(i);
           // alert("I am working!");
-            let gif = data.data[i].images.downsized_medium.url;
+        let gif = data.data[i].images.downsized_medium.url;
             // console.log(gif); //to look at the links
             getSearchedGif(gif);
-        }
+      
        $("form").trigger("reset") //clear input after button was clicked  
         
         },
