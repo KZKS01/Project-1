@@ -22,5 +22,5 @@ Click [here](https://kzks01.github.io/Project-1/) to see the deployed app.
 
 ## Future Enhancements: 
 * Drag and drop
-* copy the url
-* share to social media
+* Button to share
+* Button to copy the url
