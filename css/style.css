@@ -3,7 +3,6 @@ body{
     background-size: cover;
     justify-content: center; 
     text-align: center; 
-    padding: 5px;
 }
 
 strong{
@@ -33,6 +32,7 @@ strong{
 
 #box{
     width: 150px;
+    border: 1px solid black;
 }
 
 .trendingGif{
@@ -51,7 +51,27 @@ img{
     cursor: pointer; /*change the cursor into a hand*/
 } 
 
-/* @media only screen and (min-width: 768px) {
-    
-} */
+#trending, #search{
+    margin: 10px;
+    background-color: rgb(216, 215, 215);
+}
+@media only screen and (min-width: 768px) {
+    body{
+        padding: 80px;
+    }
+}
 
+@media only screen and (min-width: 1024px) {
+    body{
+        padding: 70px;
+    }
+    .bigbox{
+        width: 500px;
+        height: 500px;
+        border: 1px solid rgba(116, 113, 113, 0.397);
+        margin: auto;
+    }
+    #box{
+        width: 220px;
+    }
+}
