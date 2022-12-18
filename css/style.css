@@ -7,8 +7,9 @@ body{
 
 strong{
     color: rgb(79, 121, 185);
-    font-size: 50px;
+    font-size: 60px;
     font-family: 'Fredericka the Great', cursive;
+    
 }
 
 #clear:hover {
@@ -17,9 +18,29 @@ strong{
     color:rgb(238, 250, 248);
 }
 
-.btn:hover {
-    background-color: darkgrey;
+#trending:hover, #search:hover, #share:hover {
+    background-color: rgb(121, 117, 117);
     border-color: transparent;
+}
+
+#trending, #search{
+    margin: 10px;
+    background-color: rgb(70, 235, 235);
+    border: 2px solid white; 
+}
+
+#share{
+    margin: 10px;
+    background-color: rgb(247, 178, 178);
+    border: 2px solid white; 
+}
+
+#trending{
+    margin-left: -200px;
+}
+
+#search, #share{
+    padding: 10px;
 }
 
 .bigbox{
@@ -51,10 +72,6 @@ img{
     cursor: pointer; /*change the cursor into a hand*/
 } 
 
-#trending, #search{
-    margin: 10px;
-    background-color: rgb(216, 215, 215);
-}
 @media only screen and (min-width: 768px) {
     body{
         padding: 80px;
@@ -63,7 +80,7 @@ img{
 
 @media only screen and (min-width: 1024px) {
     body{
-        padding: 70px;
+        padding: 35px;
     }
     .bigbox{
         width: 500px;
