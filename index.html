@@ -16,24 +16,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <title>Project 1 - API</title>
 </head>
 <body>
     
     <h4><strong> Giphy Fun </strong></h4>
 
-        <button class="btn" id="trending" style="font-size:22px;">What's trending?</button>
-        <button class="btn" id="share" style="font-size:22px;">Share</button>
+        <button class="btn" id="trending">What's trending?</button>
+        <button class="btn" id="share1">Share</button>
+        <p class="popLink"></p>
+        <!-- <div class="sharebtns">
+            <ul class="lists">
+                <li class="fb">
+                    <a href= `https://work.workplace.com/sharer.php?display=popup&u=${}`>
+                      <i class="fab fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="twitter">
+                    <a href="#">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="reddit">
+                    <a href="#">
+                      <i class="fab fa-reddit"></i>
+                    </a>
+                  </li>
+            </ul>
+        </div> -->
+        
         <div class="bigbox trendingGif">
             <img id="img1" src="" alt="">
         </div>
         
     <br></br>
     <form>
-        <input id="box" type="text" placeholder="Enter a word or phrase" style="font-size:21px;"/><!--
-        --><button id="clear" type="reset" style="font-size:20px;">X</button>
-        <button class="btn" id="search" style="font-size:22px;">Find a GIF!</button>
-        <button class="btn" id="share" style="font-size:22px;">Share</button>
+        <input id="box" type="text" placeholder="Enter a word"/><!--
+        --><button id="clear" type="reset">X</button>
+        <button class="btn" id="search">Find a GIF!</button>
+        <button class="btn" id="share2">Share</button>
         <div class="bigbox searchedGif">
             <img id="img2" src="" alt="">
         </div>

@@ -18,7 +18,7 @@ strong{
     color:rgb(238, 250, 248);
 }
 
-#trending:hover, #search:hover, #share:hover {
+#trending:hover, #search:hover, #share1:hover, #share2:hover {
     background-color: rgb(121, 117, 117);
     border-color: transparent;
 }
@@ -29,17 +29,26 @@ strong{
     border: 2px solid white; 
 }
 
-#share{
+#share1{
     margin: 10px;
     background-color: rgb(247, 178, 178);
     border: 2px solid white; 
+    border-radius: 100%;
+    margin-left: 200px;
+}
+
+#share2{
+    margin: 10px;
+    background-color: rgb(247, 178, 178);
+    border: 2px solid white; 
+    border-radius: 100%;
 }
 
 #trending{
-    margin-left: -200px;
+    margin-left: -10px;
 }
 
-#search, #share{
+#search, #share1, #share2{
     padding: 10px;
 }
 
@@ -72,9 +81,35 @@ img{
     cursor: pointer; /*change the cursor into a hand*/
 } 
 
+/* .lists{
+    list-style: none;
+} */
+
+#trending, #share1, #share2, #search, #box, #clear{
+    font-size:20px;
+}
+
 @media only screen and (min-width: 768px) {
     body{
         padding: 80px;
+    }
+    #trending{
+        margin-right: 70px;
+    }
+    #share1{
+        margin-left: 70px;
+    }
+
+    .bigbox{
+        width: 450px;
+        height: 450px; 
+    }
+
+    #trending, #share1, #share2, #search, #box{
+        font-size:18px;
+    }
+    #clear{
+        font-size:17px;
     }
 }
 
