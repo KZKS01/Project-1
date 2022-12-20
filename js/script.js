@@ -1,9 +1,7 @@
 // alert(`Ready!`);
 $(document).ready(function() { 
   
-    const $input = $("#box");   
-    const $link = $(".popLink");
-    let i = Math.floor(Math.random()*51); //get a random index to get a random gif
+    const $input = $("#box"); 
 
     //trending gif
     $("#trending").on("click", handleGetTrending);
@@ -20,7 +18,7 @@ $(document).ready(function() {
       (data) => {
       // alert("I am working!");
       console.log(data) //to look at the array
-      // let i = Math.floor(Math.random()*51); 
+      var i = Math.floor(Math.random()*51); 
       //console.log(i);
       let gif = data.data[i].images.downsized_medium.url;
       //console.log(gif); //to look at the links
@@ -39,58 +37,6 @@ $(document).ready(function() {
         $("#img1").attr("src", gif);
       }
 
-
-
-
-
-      //share link
-    $("#share1").on("click", handleGetLink);
-    
-    function handleGetLink(evt){
-      evt.preventDefault(); // prevents a page refresh on a 'click' event 
-      
-      $.ajax({
-        url: `https://api.giphy.com/v1/gifs/trending?&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc`,
-      }).then(
-        (data) => {
-        // alert("I am working!");
-        let gif = data.data[i].images.downsized_medium.url;
-        console.log(gif);
-        $link.text(gif);
-        
-      }),
-        
-        (error) => {
-          console.log("bad request", error)
-        }
-    }
-
-    $("#share2").on("click", handleGetLink);
-
-    function handleGetLink(evt){
-      evt.preventDefault(); // prevents a page refresh on a 'click' event 
-      
-      $.ajax({
-        url: `https://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc`,
-      }).then(
-        (data) => {
-        // alert("I am working!");
-        let gif = data.data[i].images.downsized_medium.url;
-        console.log(gif);
-        $link.text(gif);
-        
-      }),
-        
-        (error) => {
-          console.log("bad request", error)
-        }
-    }  
-
-
-
-
-
-
       //search gif
       $("#search").on("click", handleGetSearch);
       $("#img2").on("click", handleGetSearch);
@@ -107,9 +53,10 @@ $(document).ready(function() {
         // alert("I am working!");
         //console.log(data); //to look at the array
         //console.log(i);
-        let gif = data.data[i].images.downsized_medium.url;
-        // console.log(gif); //to look at the links
+        var i = Math.floor(Math.random()*51); 
+        var gif = data.data[i].images.downsized_medium.url;
         getSearchedGif(gif);
+        return i;
         },
         
         (error) => {
@@ -120,10 +67,9 @@ $(document).ready(function() {
 
     function getSearchedGif(gif) {
       $("#img2").attr("src", gif);
+      var index =handleGetSearch(i)
+      console.log(index);
     }
 
     
-
-    //to do: fix share link
-
 })
