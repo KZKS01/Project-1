@@ -10,47 +10,43 @@ $(document).ready(function() {
     function handleGetTrending(evt){
       // alert("The button is clicked!");
       evt.preventDefault(); // prevents a page refresh on a 'click' event
-
-
       function randomIndex (i){
         var i = Math.floor(Math.random()*51); 
         return i;
       }
       var valueOfI = randomIndex();
 
-
-  $.ajax({
-      url: `https://api.giphy.com/v1/gifs/trending?&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc`,
-    }).then(
-      (data) => {
-      // alert("I am working!");
-      console.log(data) //to look at the array
-      var i = Math.floor(Math.random()*51); 
-      //console.log(i);
-      let gif = data.data[valueOfI].images.downsized_medium.url;
-      //console.log(gif); //to look at the links
-      getTrendingGif(gif);
-      
-    }),
-      (error) => {
+      $.ajax({
+        url: `https://api.giphy.com/v1/gifs/trending?&api_key=jR8VTUj3x87k9OpjfkvEu41hOtOz1MHc`,
+         }).then(
+        (data) => {
+        // alert("I am working!");
+        //console.log(data) //to look at the array
+        // var i = Math.floor(Math.random()*51); 
+        //console.log(i);
+        let gif = data.data[valueOfI].images.downsized_medium.url;
+        //console.log(gif); //to look at the links
+        getTrendingGif(gif);
+       }),
+       (error) => {
         console.log("bad request", error)
-      }
-  }
+        }
+    }   
       
       //will only be called in success path
       function getTrendingGif(gif) {
-        // $(".trendingGif").append(`<img src="${gif}">`);
+        // $(".trendingGif").append(`<img src="${gif}">`);//it will keep on adding more gifs
         $("#img1").attr("src", gif);
       }
 
-      //search gif
-      $("#search").on("click", handleGetSearch);
-      $("#img2").on("click", handleGetSearch);
+    //search gif
+    $("#search").on("click", handleGetSearch);
+    $("#img2").on("click", handleGetSearch);
       
-      function handleGetSearch(evt){
-        evt.preventDefault(); // prevents a page refresh on a 'click' event 
-        var userInput = $input.val();
-        // console.log($input.val());
+    function handleGetSearch(evt){
+      evt.preventDefault(); // prevents a page refresh on a 'click' event 
+      var userInput = $input.val();
+      // console.log($input.val());
       
       function randomIndex (i){
         var i = Math.floor(Math.random()*51); 
@@ -76,9 +72,8 @@ $(document).ready(function() {
       )
     }
 
-    function getSearchedGif(gif) {
+  function getSearchedGif(gif) {
       $("#img2").attr("src", gif);
     }
-
     
 })
